@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import Header from "./Header"
 
 
 const produtos = [
@@ -32,7 +33,9 @@ const precos = produtos.map(preco=> +preco.preco.replace("R$ ", "")).filter(elem
 
 function App() {
   
-  return <div>
+  return (
+      <div>
+        <Header />
       {novoObjeto.map(({id, nome, preco, cores})=>
         <div key={id}> 
           <h1>{nome}</h1>
@@ -43,6 +46,7 @@ function App() {
         </div>
       )}
     </div>
+    )
 }
 
 export default App;
